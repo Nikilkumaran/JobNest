@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p class="jname">JobNest</p>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="profile">
+        <h2>Your Profile</h2>
+        <div class="profile-box">
+            <form id="profile-form">
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name">
+                <br><br>
+                <label for="experience">Experience</label><br>
+                <textarea id="experience" name="experience" rows="4" cols="50"></textarea>
+                <br>
+                <button type="submit">Save Profile</button>
+            </form>
+        </div>
+    </section>
+    
+    <script>
+        document.getElementById("profile-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+    
+            const name = document.getElementById("name").value;
+            const experience = document.getElementById("experience").value;
+    
+            fetch('/save-profile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, experience }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Profile saved:', data);
+                alert('Profile saved successfully!');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+    
+    <footer>
+        <p>&copy; 2024 JobNest</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+/* General Styling */
+/* General Styling */
+body {
+    font-family: sans-serif, system-ui,'Segoe UI';
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: #000000; /* Dark text color for readability */
+}
+
+/* Background Blur using ::before pseudo-element */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: overlay; /* Blends gradient and texture for depth */
+    filter: blur(5px); /* Applies Gaussian blur */
+    z-index: -1; /* Ensure the background stays behind the content */
+}
+
+/* Optional: Add a shadow to give depth to text and content */
+h1, h2, h3, p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Light shadow for text contrast */
+}
+
+.container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: rgba(237, 246, 249, 0.8); /* Adds a slight overlay to the content for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted look */
+    border-radius: 10px;
+}
+
+/* Header Styling */
+header {
+    background-color: #008fa8;
+    padding: 10px 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+    margin-left: 100%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.nav-links li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+}
+
+.jname {
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-left: -40%;
+    margin-bottom: 1%;
+    font-size: 25px;
+    font-weight: 500;
+    color: #000000;
+}
+
+/* Hero Section Styling */
+.hero {
+    text-align: center;
+    margin-top: 1%;
+    padding: 40px 0;
+    margin-bottom: -5%;
+}
+
+.hero .logo {
+    width: 250px;
+    height: 250px;
+}
+
+#job-search-form {
+    margin-top: 20px;
+}
+
+#job-search-form input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    margin-right: 10px;
+    background-color: #dddddd;
+    border: 1px solid black;
+}
+
+#job-search-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #bd3f3f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+#job-search-form button:hover {
+    background-color: #83c5be;
+    border: 1px solid black;
+    color: #000000;
+}
+
+/* Post Feed Styling */
+.post-feed {
+    padding: 10px 200px;
+    margin: 5%;
+    margin-bottom: -1%;
+
+}
+
+.post-feed h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.glass-box {
+    background: rgba(0, 0, 0, 0.185);
+    border-radius: 100px;
+    box-shadow: 0 12px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.user-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    object-fit: cover;
+    box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.5);
+}
+
+.post-content {
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+
+.user-name {
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+.post-content p {
+    font-size: 15px;
+    color: #000000;
+    margin-left: 20px;
+    margin-bottom: 2px;
+}
+
+/* Contact Form Styling */
+.contact {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contact h2 {
+    font-size: 36px;
+    color: #006d77;
+    margin-bottom: 40px;
+}
+
+#contact-form {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(22, 22, 22, 0.075);
+    max-width: 500px;
+    margin: 20px auto;
+    margin-bottom: -1%;
+    background-color: #9b9b9b7a;
+    border: 0px solid black;
+    color: #000000;
+}
+
+#contact-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 25px;
+    background-color: #ffffffb4;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #cacaca;
+    outline: none;
+}
+
+#contact-form button {
+    background-color: #14d2e4;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    border: 2px solid black;
+}
+
+#contact-form button:hover {
+    background-color: #c02f2f;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #008fa8;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Additional Sections */
+.about {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.aboutus {
+    margin-top: 20;
+    padding-left: 300px;
+    padding-right: 300px;
+    font-size: 15px;
+}
+
+.profile {
+    margin: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 15%;
+    margin-top: 4%;
+}
+
+/* Profile Box Styling */
+.profile-box {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(22, 22, 22, 0.075);
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: -145px;
+    margin-left: 300px;
+    margin-right: 20px;
+    background-color: #9b9b9b7a;
+    border: 0px solid black;
+    color: #000000;
+}
+
+.profile-box form {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.profile-box input[type="text"],
+.profile-box textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 25px;
+    background-color: #ffffffb4;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.profile-box button {
+    padding: 12px;
+    background-color: #17d3e0;
+    color: #000000;
+    border: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.profile-box button:hover {
+    background-color: #c02f2f;
+}
+
+.profile h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 1px solid rgb(58, 58, 58);
+}
+
+.job-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.job-item h3 {
+    margin: 0 0 5px 0;
+}
+
+.job-item p {
+    margin: 0;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search | Home</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link your CSS file -->
+</head>
+<body>
+    <header>
+        <p class="jname">JobNest</p>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="JobNest.png" alt="JobNest Logo" class="logo">
+        <br>  
+        <div class="aboutus">
+            <p>
+                <b>JobNest</b> is designed to connect job seekers and employers efficiently. Job seekers can explore a variety of job openings, 
+                filtered by category, location, job type (full-time, part-time, remote), and more. Employers can post job listings, providing 
+                detailed descriptions of roles, responsibilities, and requirements.
+            </p>
+        </div>  
+        <br>
+        <form id="job-search-form">
+            <input type="text" id="career-field" placeholder="Enter your career field" required>
+            <button type="submit">Search Jobs</button>
+            <p style="font-size: small;">e.g., Software Developer, Data Analyst, etc.</p>
+        </form>
+    </section>
+    
+    <section class="post-feed">
+        <h2>Latest updates from our Users</h2>
+        <div class="post glass-box">
+            <img src="user1.jpeg" alt="User 1 Photo" class="user-photo">
+            <div class="post-content">
+                <h3 class="user-name">Charles</h3>
+                <p>I've recently started a new role as a software developer. It's been a great experience so far, and I'm excited to continue learning!</p>
+            </div>
+        </div>
+        <div class="post glass-box">
+            <img src="user2.jpg" alt="User 2 Photo" class="user-photo">
+            <div class="post-content">
+                <h3 class="user-name">Lewis</h3>
+                <p>After searching for months, I finally landed my dream job in digital marketing! My advice is to never give up and stay persistent.</p>
+            </div>
+        </div>
+        <div class="post glass-box">
+            <img src="user3.jpeg" alt="User 2 Photo" class="user-photo">
+            <div class="post-content">
+                <h3 class="user-name">Daniel Ricarrdio</h3>
+                <p>It was easy! I got selected in my first attempt at an interview.</p>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <footer>
+        <p>&copy; 2024 JobNest</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

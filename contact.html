@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p class="jname">JobNest</p>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h2>Contact Us!</h2>
+        <form id="contact-form">
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="Your email address" required>
+            <br><br>
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+            <br>
+            <button type="submit">Send</button>
+        </form>
+        <p id="response-message"></p>
+    </section>
+
+    <br><br><br><br><br><br>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const response = await fetch('/save-contact', {  // Updated URL
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, message })
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                document.getElementById('response-message').innerText = 'Message sent successfully!';
+            } else {
+                document.getElementById('response-message').innerText = 'Error submitting form: ' + result.error;
+            }
+        });
+    </script>
+    
+    <footer>
+        <p>&copy; 2024 JobNest</p>
+    </footer>
+</body>
+</html>
